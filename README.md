@@ -36,6 +36,9 @@ class ToDoElement {
     String name;
     Boolean isDone;
 }
+
+```
+
 ### RELATIONSHIPS:
 _**ONE** `List` can have **MANY** `Elements`._
 
