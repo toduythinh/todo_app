@@ -142,7 +142,7 @@ Create new list/element:
 
 Rename list/element:
 
-![Alt text](github_img/renamelist.png)
+![Alt text](github_img/rename_list.png)
 
 **2. CSS**
 - Make correct positions of elements 
