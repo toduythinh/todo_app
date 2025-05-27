@@ -1,4 +1,4 @@
-# todo_app
+# todolist_app
 
 ### BASIC ELEMENTS:
 Generated a template using https://start.spring.io/.
