@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple to-do lists</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+        body {
+            background-color: #cdde3c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #444343;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: #9aff57;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        a.back-link {
+            text-decoration: none;
+            background-color: #bbb;
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: #444343;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        a.back-link:hover {
+            background-color: #999;
+        }
+
+        form {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 14px 18px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 1.8px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #f08a8a;
+            box-shadow: 0 0 6px #f08a8a88;
+        }
+
+        button[type="submit"] {
+            padding: 14px 18px;
+            background-color: #444343;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<h1>Rename list</h1>
+
+<div class="container">
+    <a href="/" class="back-link" title="Back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    <form
+        action="#"
+        th:action="@{/edit-list-name/{id}(id=${toDoList.id})}"
+        th:object="${toDoList}"
+        method="POST"
+    >
+        <input
+            type="text"
+            th:field="${toDoList.name}"
+            placeholder="New list name"
+            autofocus
+            required
+        />
+        <button type="submit" title="Save">
+            <i class="fas fa-check"></i>
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
