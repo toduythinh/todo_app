@@ -138,7 +138,7 @@ Home page:
 
 Create new list/element:
 
-![Alt text](github_img/newlist.png)
+![Alt text](github_img/list.png)
 
 Rename list/element:
 
